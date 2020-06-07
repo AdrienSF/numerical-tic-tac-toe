@@ -21,8 +21,12 @@ def singleplayer(game: Game):
     print(game_info)
     while game.state == State.CONTINUE:
         # print board
+        print()
+        print('board:')
         for row in game.board:
             print(row)
+        print()
+        
 
         if game.player_turn == user: # get user input
             # Display player's turn, pieces left... and input move
@@ -36,10 +40,6 @@ def singleplayer(game: Game):
             piece = int(input(player +  " select piece to play: (options: " + str(pieces_left) + ") "))
             row = int(input(player +  " select row to place piece: "))
             column = int(input(player +  " select column to place piece: "))
-            # move = agent.get_legal_moves(game)[-1]
-            # piece = move['piece']
-            # row = move['row']
-            # column = move['col']
 
         else: # get agent input
             move = agent.get_move(game)
@@ -48,7 +48,10 @@ def singleplayer(game: Game):
             column = move['col']
 
         game_info = game.play(piece, row, column)
+        print()
+        print('game engine object information:')
         print(game_info)
+        print()
 
 
     # show end of game message and final board configuration

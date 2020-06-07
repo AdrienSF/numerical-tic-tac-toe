@@ -24,10 +24,13 @@ class Agent():
                 possible_game = copy.deepcopy(game)
                 possible_game.play(move['piece'], move['row'], move['col'])
                 evaluated_moves[self.minimax(possible_game, float('-inf'), float('inf'))] = move
+                if 1 in evaluated_moves.keys():
+                    break # stop looking if a perfect move has already been found
 
             best_value = max(evaluated_moves.keys())
             best_move = evaluated_moves[best_value]
-            print("best move has a value of: " + str(best_value))
+            # uncomment this to see whether the agent is in a winning, losing or draw position
+            # print("best move has a value of: " + str(best_value)) 
             return best_move
 
 

@@ -18,6 +18,7 @@ Run main.py and you will be asked which mode and which player you wish to play a
 ## TODO
 This project was completed in under 24 hours as a coding challenge, but given enough time there are a few more things I would have done with best practices in mind.
 
-- add unit test files for the agent and game engine
-- make sure the scale of the game (3 by 3) is not hard-coded in the engine and agent, so that they can be easily improved to handle a game of n by n numerical tic-tac-toe
-- separate the planning aspect (minimax search) and the agent into different classes, so that the Agent() class can take different strategies (planner objects) as input
+- Add unit test files for the agent and game engine.
+- Make sure the scale of the game (3 by 3) is not hard-coded in the engine and agent, so that they can be easily improved to handle a game of n by n numerical tic-tac-toe.
+- Separate the planning aspect (minimax search) and the agent into different classes, so that the Agent() class can take different strategies (planner objects) as input.
+- Generalize hard-coded moves: organize hard-coded moves (perfect first turn move for example) in a seperate data sctructure (hashmap/python dict). This could then be used to reduce duplicate work during minimax search.
